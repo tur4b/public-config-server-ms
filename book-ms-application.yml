@@ -2,7 +2,6 @@ server:
   port: 8091
 
 spring:
-  # application.name: 'book-ms'
 #  database configurations::begin
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/bookDB}
@@ -20,16 +19,6 @@ spring:
     enabled: true
     change-log: classpath:/db/migration/db.changelog-master.xml
 #  database configurations::end
-
-# service discovery client configs::begin
-eureka:
-  client:
-    enabled: true
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka
-# service discovery client configs::end
 
 
 springdoc:
