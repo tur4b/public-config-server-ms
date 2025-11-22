@@ -21,6 +21,15 @@ spring:
     enabled: true
     change-log: classpath:/db/migration/db.changelog-master.xml
 #  database configurations::end
+# caching - redis::begin
+  data:
+    redis:
+      host: localhost
+      username: admin
+      password: redis
+      port: 6379
+      connect-timeout: 15s
+# caching - redis::end
 
 # service discovery client configs::begin
 eureka:
