@@ -2,7 +2,7 @@ server:
   port: 8091
 
 spring:
-  application.name: 'book-ms'
+  # application.name: 'book-ms'
 #  database configurations::begin
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/bookDB}
