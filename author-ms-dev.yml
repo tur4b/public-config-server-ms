@@ -1,1 +1,28 @@
+server:
+  port: 8092
 
+spring:
+  application:
+    name: 'author-ms'
+  #  database configurations::begin
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/authorDB}
+    username: ${SPRING_DATASOURCE_USERNAME:postgresql}
+    password: ${SPRING_DATASOURCE_USERNAME:postgresql}
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    open-in-view: false
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/migration/db.changelog-master.xml
+#  database configurations::end
+
+springdoc:
+  api-docs:
+    enabled: true
+#  show-actuator: true
