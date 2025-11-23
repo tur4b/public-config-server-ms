@@ -20,15 +20,13 @@ spring:
     change-log: classpath:/db/migration/db.changelog-master.xml
 #  database configurations::end
 
-# service discovery client configs::begin
-eureka:
-  client:
-    enabled: true
-    service-url:
-      defaultZone: ${EUREKA_SERVER_URL:http://discovery-server:8761/eureka}
-# service discovery client configs::end
-
 springdoc:
   api-docs:
     enabled: true
 #  show-actuator: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
