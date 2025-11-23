@@ -24,11 +24,10 @@ spring:
   # caching - redis::begin
   data:
     redis:
-      host: localhost
+      host: ${REDIS_HOST}
       username: ${REDIS_USERNAME}
       password: ${REDIS_PASSWORD}
       port: ${REDIS_PORT}
-      connect-timeout: 15s
 # caching - redis::end
 
 springdoc:
