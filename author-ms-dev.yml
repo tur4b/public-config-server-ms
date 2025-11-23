@@ -1,5 +1,5 @@
 server:
-  port: ${SERVER_PORT}
+  port: ${SERVER_PORT:8092}
 
 spring:
   application:
@@ -24,10 +24,10 @@ spring:
   # caching - redis::begin
   data:
     redis:
-      host: ${REDIS_HOST}
-      username: ${REDIS_USERNAME}
-      password: ${REDIS_PASSWORD}
-      port: ${REDIS_PORT}
+      host: ${REDIS_HOST:localhost}
+      username: ${REDIS_USERNAME:admin}
+      password: ${REDIS_PASSWORD:redis}
+      port: ${REDIS_PORT:6379}
 # caching - redis::end
 
 springdoc:
