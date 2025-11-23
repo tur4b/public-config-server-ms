@@ -1,0 +1,29 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          # Define your routes here
+          routes:
+            # book-ms
+            - id: book-ms
+              uri: http://book-ms:8091
+              predicates:
+                - Path=/book-ms/**
+              filters:
+                - AddRequestHeader=X-Gateway, book-ms
+            # author-ms
+            - id: author-ms
+              uri: http://author-ms:8092
+              predicates:
+                - Path=/author-ms/**
+              filters:
+                - AddRequestHeader=X-Gateway, author-ms
+  
+      # HTTP client configuration (timeouts, etc.)
+  http.client:
+    connect-timeout: 5000
+    read-timeout: 10000
